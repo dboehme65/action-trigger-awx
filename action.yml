@@ -57,8 +57,8 @@ runs:
   image: Dockerfile
   env:
     TOWER_HOST: ${{ inputs.tower_url }}
-    TOWER_USER: ${{ inputs.tower_user }}
-    TOWER_PW: ${{ inputs.tower_pw }}
+    TOWER_USERNAME: ${{ inputs.tower_user }}
+    TOWER_PASSWORD: ${{ inputs.tower_pw }}
     TOWER_VERIFY_SSL: ${{ inputs.tower_verify_ssl }}
     RESOURCE_TYPE: ${{ inputs.resource_type }}
     RESOURCE_NAME: ${{ inputs.resource_name }}
