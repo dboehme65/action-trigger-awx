@@ -21,7 +21,7 @@ inputs:
   resource_type:
     description: "One of resource types: project, job_template or workflow_job_template."
     required: true
-  resource_name:
+  resource_id:
     description: "Name or ID of project, job_template or workflow_job_template."
     required: true
   job_type:
