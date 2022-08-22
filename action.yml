@@ -61,7 +61,7 @@ runs:
     TOWER_PASSWORD: ${{ inputs.tower_password }}
     TOWER_VERIFY_SSL: ${{ inputs.tower_verify_ssl }}
     RESOURCE_TYPE: ${{ inputs.resource_type }}
-    RESOURCE_NAME: ${{ inputs.resource_name }}
+    RESOURCE_ID: ${{ inputs.resource_id }}
     JOB_TYPE: ${{ inputs.job_type }}
     LIMIT: ${{ inputs.limit }}
     TAGS: ${{ inputs.tags }}
