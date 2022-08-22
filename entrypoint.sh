@@ -9,8 +9,13 @@ if [ -z "$TOWER_HOST" ]; then
   exit 1
 fi
 
-if [ -z "$TOWER_OAUTH_TOKEN" ]; then
-  echo "Tower oauth token is not set. Exiting."
+if [ -z "$TOWER_USERNAME" ]; then
+  echo "Tower username is not set. Exiting."
+  exit 1
+fi
+
+if [ -z "$TOWER_USER_PASSWORD" ]; then
+  echo "Tower password is not set. Exiting."
   exit 1
 fi
 
@@ -30,11 +35,11 @@ if [ -z "$RESOURCE_TYPE" ]; then
   exit 1
 fi
 
-if [ -z "$RESOURCE_NAME" ]; then
+if [ -z "$RESOURCE_ID" ]; then
   echo "Resource name or id is not set. Exiting."
   exit 1
 else
-  RESOURCE_NAME="'$RESOURCE_NAME'"
+  RESOURCE_ID="'$RESOURCE_ID'"
 fi
 
 if [ -z "$LIMIT" ]; then
