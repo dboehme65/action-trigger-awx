@@ -21,7 +21,6 @@ RUN echo "**** install Python ****" && \
 
 
 RUN rm -rf /var/cache/*/*
-RUN pip3 install requests paho-mqtt
 ADD requirements.txt /requirements.txt
 RUN pip install --no-cache-dir -r /requirements.txt
 ADD entrypoint.sh /entrypoint.sh
