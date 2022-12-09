@@ -75,5 +75,5 @@ See [action.yml](action.yml)
           monitor: "false"
 ```
 
-#License
-The scripts and documentation in this project are released under the MIT License
+## License
+The scripts and documentation in this project are released under the [MIT License](https://github.com/dboehme65/action-trigger-awx/edit/main/License)
