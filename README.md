@@ -74,3 +74,6 @@ See [action.yml](action.yml)
           resource_name: actions-awxkit-test2
           monitor: "false"
 ```
+
+#License
+The scripts and documentation in this project are released under the MIT License
