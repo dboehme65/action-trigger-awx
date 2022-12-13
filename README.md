@@ -76,4 +76,4 @@ See [action.yml](action.yml)
 ```
 
 ## License
-The scripts and documentation in this project are released under the [MIT License](https://github.com/dboehme65/action-trigger-awx/edit/main/License)
+The scripts and documentation in this project are released under the [MIT License](https://github.com/freenet-actions/action-trigger-awx/edit/main/License)
