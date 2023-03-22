@@ -1,2 +1,3 @@
 requests
 awxkit
+paho-mqtt
