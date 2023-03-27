@@ -1,7 +1,7 @@
 FROM python:slim-bullseye
 ENV PYTHONUNBUFFERED=1
 RUN apt update \
-  && apt upgrade \
+  && apt upgrade -y \
   && apt install -y bash \
   && apt install -y curl \
   && apt install -y openssl \
