@@ -33,7 +33,7 @@ See [action.yml](action.yml)
           resource_name: "548"
 
       - name: "Test AWX: Simple workflow template with extra_vars"
-        uses: freenet-actions/action-trigger-awx@main
+        uses: freenet-actions/action-trigger-awx@v1
         with:
           tower_url: ${{ secrets.TOWER_HOST }}
           tower_username: ${{ secrets.TOWER_USER }}
@@ -43,7 +43,7 @@ See [action.yml](action.yml)
           extra_vars: '{"server": "metaluna-auto-d11.mobilcom.de", "launched_by": "My Name"}'          
 
       - name: "Test AWX: Simple ob template without waiting"
-        uses: fitbeard/action-trigger-awx@v1
+        uses: freenet-actions/action-trigger-awx@v1
         with:
           tower_url: ${{ secrets.TOWER_HOST }}
           tower_username: ${{ secrets.TOWER_USER }}
