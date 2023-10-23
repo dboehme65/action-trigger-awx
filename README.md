@@ -1,10 +1,8 @@
-# Github action for AWX and Ansible Tower resource triggering
+# AWX resource triggering
 
-[![main](https://github.com/fitbeard/action-trigger-awx/workflows/main/badge.svg)](https://github.com/fitbeard/action-trigger-awx/actions?query=workflow%3Amain)
+This action aims to interact with AWX.
 
-This Github action aims to interact with AWX or Tower servers.
-
-It connects to an AWX or Tower server and launches a job or workflow_job template or updates project.
+It connects to an AWX and launches a job or workflow_job template or updates project.
 
 ## Usage
 
@@ -17,59 +15,39 @@ See [action.yml](action.yml)
     runs-on: ubuntu-latest
     steps:
       - name: "Test AWX: Simple job template"
-        uses: fitbeard/action-trigger-awx@v1
+        uses: freenet-actions/action-trigger-awx@v1
         with:
           tower_url: ${{ secrets.TOWER_HOST }}
-          tower_token: ${{ secrets.TOWER_OAUTH_TOKEN }}
+          tower_username: ${{ secrets.TOWER_USER }}
+          tower_password: ${{ secrets.TOWER_PASSWORD }}
           resource_type: job_template
-          resource_name: actions-awxkit-test
+          resource_name: "744"
 
       - name: "Test AWX: Simple workflow template"
-        uses: fitbeard/action-trigger-awx@v1
+        uses: freenet-actions/action-trigger-awx@v1
         with:
           tower_url: ${{ secrets.TOWER_HOST }}
-          tower_token: ${{ secrets.TOWER_OAUTH_TOKEN }}
+          tower_username: ${{ secrets.TOWER_USER }}
+          tower_password: ${{ secrets.TOWER_PASSWORD }}
           resource_type: workflow_job_template
-          resource_name: actions-awxkit-workflow-test
+          resource_name: "548"
 
-      - name: "Test AWX: Project update"
-        uses: fitbeard/action-trigger-awx@v1
+      - name: "Test AWX: Simple workflow template with extra_vars"
+        uses: freenet-actions/action-trigger-awx@main
         with:
           tower_url: ${{ secrets.TOWER_HOST }}
-          tower_token: ${{ secrets.TOWER_OAUTH_TOKEN }}
-          resource_type: project
-          resource_name: ansible-project
-
-      - name: "Test AWX: Random options job template 1"
-        uses: fitbeard/action-trigger-awx@v1
-        with:
-          tower_url: ${{ secrets.TOWER_HOST }}
-          tower_token: ${{ secrets.TOWER_OAUTH_TOKEN }}
-          resource_type: job_template
-          resource_name: actions-awxkit-test3
-          limit: "localhost-0*"
-          extra_vars: '{"test": 1, "test2": "this variable"}'
-          timeout: 300
-
-      - name: "Test AWX: Random options job template 2"
-        uses: fitbeard/action-trigger-awx@v1
-        with:
-          tower_url: ${{ secrets.TOWER_HOST }}
-          tower_token: ${{ secrets.TOWER_OAUTH_TOKEN }}
-          resource_type: job_template
-          resource_name: actions-awxkit-test3
-          limit: "localhost-0*"
-          extra_vars: '{"test": 1, "test2": "this variable"}'
-          branch: "test/awxkit_action_poc"
-          inventory: localhost-awxkit-test
-          tags: "1,two,o_0"
-          skip_tags: "nonsense"
+          tower_username: ${{ secrets.TOWER_USER }}
+          tower_password: ${{ secrets.TOWER_PASSWORD }}
+          resource_type: "workflow_job_template"
+          resource_name: "552"
+          extra_vars: '{"server": "metaluna-auto-d11.mobilcom.de", "launched_by": "My Name"}'          
 
       - name: "Test AWX: Simple ob template without waiting"
         uses: fitbeard/action-trigger-awx@v1
         with:
           tower_url: ${{ secrets.TOWER_HOST }}
-          tower_token: ${{ secrets.TOWER_OAUTH_TOKEN }}
+          tower_username: ${{ secrets.TOWER_USER }}
+          tower_password: ${{ secrets.TOWER_PASSWORD }}
           resource_type: job_template
           resource_name: actions-awxkit-test2
           monitor: "false"
