@@ -1,4 +1,4 @@
-FROM python:3.11.9-slim-bullseye
+FROM python:3.13.0-slim-bullseye
 ENV PYTHONUNBUFFERED=1
 RUN apt update \
   && apt upgrade -y \
